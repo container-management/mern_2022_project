@@ -41,6 +41,18 @@ app.get("/ps",(req,res)=>{
     // res.send();
 })
 
+//function to check whether the particular image entered by user has been pulled or not.
+app.get("/search",(req,res)=>{
+    const cimage= req.query.cimage;
+      // console.log(cname +" "+cimage);
+//    res.send(cname+" "+cimage);
+     exec(`docker images | grep ${cimage}` ,(err,stdout,stderr)=>{
+        console.log(stdout);
+        res.send("<pre>"+stdout+"</pre>");
+     })
+});
+
+
 app.listen(3000,()=>{console.log("Container app tool started .....")});
 
 //http://localhost:3000/run?cname=os8&cimage=ubuntu  `localhost:3000/run?cname=${cn}&cimage=ubuntu`
