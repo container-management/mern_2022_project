@@ -89,6 +89,24 @@ app.get("/psid",(req,res)=>{
         })
         // res.send();
     })
+      app.get("/pss",(req,res)=>{
+        //   exec("docker ps -a | tail -n +2 | awk '{print $2,$7, $10}'",(err,stdout,stderr)=>{
+        //     console.log(stdout);
+        //     res.send("<pre>"+stdout+"</pre>");
+            exec("docker stop $(docker ps -a -q)",(err,stdout,stderr)=>{
+            let a = stdout.split("\n");
+             res.write("<table border='5px' align='center' width='8%'");
+             res.write("<tr> <th>CONTAINER ID</th></tr>");  
+             a.forEach((cinfo) => {
+                //  cinfo = cdetail.trim().split(/\s+/);
+                //  console.log(cinfo);
+                 res.write("<tr>"+" <td>"+cinfo+"</td> "+"</tr>")
+             });
+               res.write("</table>");
+               res.send();
+            })
+            // res.send();
+        })  
 
 
 app.listen(3000,()=>{console.log("Container app tool started .....")});
