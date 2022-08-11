@@ -64,22 +64,74 @@
     </div>
     <div  style="border: 5px solid gray; height:13vh; width:100vw; padding: 15px;" id="lc"><h3>Launch Container ID:</h3></div>
      
-    
+        <script>            
+      function ps() {
+       var xhttp = new XMLHttpRequest();
+       xhttp.onreadystatechange = function() {
+           if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("ps").innerHTML = this.responseText;
+           }
+       };
+       xhttp.open("GET", "http://localhost:3000/ps", true);
+       xhttp.send();
+     }
+       function psa() {
+       var xhttp = new XMLHttpRequest();
+       xhttp.onreadystatechange = function() {
+           if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("ps").innerHTML = this.responseText;
+           }
+       };
+       xhttp.open("GET", "http://localhost:3000/psa", true);
+       xhttp.send();
+     }
+     function psid() {
+       var xhttp = new XMLHttpRequest();
+       xhttp.onreadystatechange = function() {
+           if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("ps").innerHTML = this.responseText;
+           }
+       };
+       xhttp.open("GET", "http://localhost:3000/psid", true);
+       xhttp.send();
+     }
+     function psr() {
+       var xhttp = new XMLHttpRequest();
+       xhttp.onreadystatechange = function() {
+           if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("ps").innerHTML = this.responseText;
+           }
+       };
+       xhttp.open("GET", "http://localhost:3000/psr", true);
+       xhttp.send();
+     }  
+     function pss() {
+       var xhttp = new XMLHttpRequest();
+       xhttp.onreadystatechange = function() {
+           if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("ps").innerHTML = this.responseText;
+           }
+       };
+       xhttp.open("GET", "http://localhost:3000/pss", true);
+       xhttp.send();
+     }    
+   </script> 
      <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
         <div class="" style="width: 100%; height: 400px; ">
             <div class="row" style="padding: 50px;">
                 <div class="col-6" style="text-align: center;">
                     <div class="row" >
-                    <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
-                    <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
-                    <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
-                    <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
+
+                    <div onclick="ps()" class="col-12"><button type="button" class="btn btn-primary btn-lg">Running container</button></div><br><br><br>
+                    <div onclick="psa()" class="col-12"><button type="button" class="btn btn-primary btn-lg">To see all Container</button></div><br><br><br>
+                    <div onclick="psid()" class="col-12"><button type="button" class="btn btn-primary btn-lg">To see only id of all container</button></div><br><br><br>
+                    <div onclick="pss()" class="col-12"><button type="button" class="btn btn-primary btn-lg">To stop all the container</button></div><br><br><br>
 
                     </div>
                 </div>
                 <div class="col-6" style="text-align: center;">
-                    <div class="row">
-                    <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
+                    <div class="row">                 
+                    <div onclick="psr()" class="col-12"><button type="button" class="btn btn-primary btn-lg">Remove all the container</button></div><br><br><br>
                     <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
                     <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
                     <div class="col-12"><button type="button" class="btn btn-primary btn-lg">Large button</button></div><br><br><br>
@@ -93,25 +145,8 @@
       
     </div>
 </div>
-<script>            
-   function pslist() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("ps").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "http://localhost:3000/ps", true);
-    xhttp.send();
-}</script>
 
-<div onclick="pslist()" style="display: flex; justify-content:center;text-align:center; margin:10px; background-color: aliceblue;">
- <button style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">click to see all running container</button></div>
- <button onclick="ps()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">Running container</button>
-  <button onclick="psa()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">To see all Container</button>
-  <button onclick="psid()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">To see only id of all container</button>
-  <button onclick="pss()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">To stop all the container</button>
-  <button onclick="psr()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">Remove all the container</button>   
+
 <div  id="ps" style="border: solid 5px gray ; width:100vw; height:40vh; padding: 40px; background-color: aliceblue"></div>
 
   </body>
