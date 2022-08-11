@@ -105,7 +105,13 @@
     xhttp.send();
 }</script>
 
-<div onclick="pslist()" style="display: flex; justify-content:center;text-align:center; margin:10px; background-color: aliceblue;"><button style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">click to see all running container</button></div>
+<div onclick="pslist()" style="display: flex; justify-content:center;text-align:center; margin:10px; background-color: aliceblue;">
+ <button style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">click to see all running container</button></div>
+ <button onclick="ps()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">Running container</button>
+  <button onclick="psa()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">To see all Container</button>
+  <button onclick="psid()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">To see only id of all container</button>
+  <button onclick="pss()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">To stop all the container</button>
+  <button onclick="psr()" style="display:inline-block;border: none; outline:none; height: 40px; background-color: green; color: white;">Remove all the container</button>   
 <div  id="ps" style="border: solid 5px gray ; width:100vw; height:40vh; padding: 40px; background-color: aliceblue"></div>
 
   </body>
