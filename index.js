@@ -41,6 +41,26 @@ app.get("/ps",(req,res)=>{
     // res.send();
 })
 
+//function to remove all the containers
+app.get("/psr",(req,res)=>{
+  //   exec("docker ps -a | tail -n +2 | awk '{print $2,$7, $10}'",(err,stdout,stderr)=>{
+  //     console.log(stdout);
+  //     res.send("<pre>"+stdout+"</pre>");
+      exec("docker rm -f $(docker ps -a -q)",(err,stdout,stderr)=>{
+      let a = stdout.split("\n");
+       res.write("<table border='5px' align='center' width='8%'");
+       res.write("<tr> <th>CONTAINER ID</th></tr>");  
+       a.forEach((cinfo) => {
+          //  cinfo = cdetail.trim().split(/\s+/);
+          //  console.log(cinfo);
+           res.write("<tr>"+" <td>"+cinfo+"</td> "+"</tr>")
+       });
+         res.write("</table>");
+         res.send();
+      })
+      // res.send();
+  })
+
 //function to check whether the particular image entered by user has been pulled or not.
 app.get("/search",(req,res)=>{
     const cimage= req.query.cimage;
