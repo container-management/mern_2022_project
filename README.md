@@ -10,5 +10,5 @@
   In the proposed system we are eliminating the user to remember the commands and execute from shell instead they can just use the front end and can run a command just     by pressing the button , Where it saves time as well as they can execute the command  swiftly.
  
 ## Future Work 
-    We can more enhave this application by  integrating command line terminal as well as we can use Kubernetes concept to implement the same as well and the sytsem can      be enhanced  by more readiness as well a well structured Front end as well as integration of this commands to enhace the kubectl.
+    We can more enhance this application by  integrating command line terminal as well as we can use Kubernetes concept to implement the same as well and the sytsem can      be enhanced  by more readiness as well a well structured Front end as well as integration of this commands to enhace the kubectl.
  
