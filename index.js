@@ -69,7 +69,7 @@ app.get("/search",(req,res)=>{
      exec(`docker images | grep ${cimage}` ,(err,stdout,stderr)=>{
         console.log(stdout);
            if(stdout==""){
-             stdout = "Image not found";
+             stdout = cimage+"image not found";
               }
         res.send("<pre>"+stdout+"</pre>");
      })
