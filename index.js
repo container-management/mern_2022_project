@@ -148,6 +148,24 @@ app.get("/psid",(req,res)=>{
             })
             // res.send();
         })  
+  
+// function to rename container
+   app.get("/rename", (req, res) => {
+  const ceename = req.query.cname;
+  const cnnname = req.query.cimage;
+  // console.log(ceename +" "+cnnname);
+  //    res.send(cname+" "+cimage);
+  exec(`docker rename ${ceename} ${cnnname}`, (err, stdout, stderr) => {
+    // console.log(stdout);
+    if(!stderr){
+      stdout = "Container name change " + ceename + "----->"+cnnname;
+    }
+    else{
+      stdout = "Some name is wrong(or already taken by someone) plz try again";
+    }
+    res.send("<pre>" + stdout + "</pre>");
+  })
+});
 
 
 app.listen(3000,()=>{console.log("Container app tool started .....")});
