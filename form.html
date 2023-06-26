@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Management</title>
+    <script>
+        function pslist() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("ps").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "http://localhost:3000/ps", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Launch Container</h1>
+   <form action="/run" method="get">
+    Name<input name="cname"/>
+    <br/>
+    Image name
+    <select name="cimage">
+        <option>centos</option>
+        <option>ubuntu</option>
+    </select>
+    <br/>
+    <button>submit</button>
+   </form> 
+   <div id="ps">This is my Container list</div>
+    <button onclick="pslist()">click to get list</button>
+</body>
+</html>
